@@ -1,0 +1,142 @@
+body {
+  background: linear-gradient(0deg, rgb(247, 247, 247), rgb(252, 221, 221));
+  background-attachment: fixed;
+}
+
+.container {
+  background: #ffeeee url("../images/background.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  margin: 170px auto;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 4px 5px 26px -3px rgba(53, 53, 53, 0.89);
+  width: 780px;
+  height: 500px;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  background: #f0abaf;
+  color: #fff;
+  font-family: "Klee One";
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 9px 25px;
+}
+
+.button:hover {
+  background: inherit;
+  border: 1px solid #f0abaf;
+  color: #f0abaf;
+  padding: 8px 25px;
+}
+
+.search-bar {
+  opacity: 0.6;
+  margin-top: 30px;
+  margin-left: 100px;
+  padding: 8px;
+  width: 450px;
+  border: 1px solid #696969;
+  border-radius: 5px;
+  font-family: "Klee One";
+}
+
+.top-section {
+  position: relative;
+  right: 5px;
+}
+
+.main-section {
+  color: rgba(53, 53, 53, 0.89);
+  position: relative;
+  left: 125px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.bottom-section {
+  color: rgba(53, 53, 53, 0.89);
+  position: relative;
+  left: 95px;
+}
+
+.fa-location-dot {
+  position: relative;
+  font-size: 35px;
+  float: right;
+  right: 60px;
+  bottom: 40px;
+  color: #fe4b53;
+}
+
+.city {
+  font-size: 30px;
+  margin: 0;
+}
+
+.current-temperature {
+  font-size: 50px;
+  margin-top: -28px;
+}
+
+.temperature-unit {
+  font-size: 16px;
+  margin-top: -15px;
+  margin-left: 35px;
+  width: 70px;
+}
+
+.conditions {
+  font-size: 15px;
+  line-height: normal;
+  margin-top: -35px;
+  margin-left: 5px;
+}
+
+#wind-status,
+#humidity-status {
+  margin-top: -15px;
+}
+
+.sunny {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 145px;
+  bottom: 45px;
+  opacity: 0.6;
+}
+
+.icon {
+  width: 65px;
+  height: 65px;
+}
+
+.icon-section {
+  display: flex;
+  flex: 0.86;
+  justify-content: space-around;
+  position: relative;
+  right: 45px;
+  margin-top: -20px;
+  opacity: 0.6;
+}
+
+.weekday {
+  font-family: "Caveat";
+  font-size: 26px;
+}
+
+.highest-lowest {
+  font-family: "Klee One";
+}
+
+.current-time {
+  font-family: "Klee One";
+  font-size: 20px;
+  text-align: center;
+}

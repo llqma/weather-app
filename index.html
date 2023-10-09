@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lisa's Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&family=Klee+One:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="project/style.css" />
+    <script
+      src="https://kit.fontawesome.com/69ef85efaf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top-section">
+        <form id="search-form">
+          <input
+            type="text"
+            placeholder="Search city"
+            id="search-input"
+            class="search-bar"
+          />
+          <input type="submit" id="go-button" value="Go" class="button" />
+        </form>
+        <i class="fa-solid fa-location-dot" id="current-location"></i>
+      </div>
+
+      <span class="current-time" id="display-time"
+        >Display current time here..</span
+      >
+
+      <div class="main-section row">
+        <p class="city" id="current-city">Display city</p>
+        <p class="current-temperature col-1" id="current-temperature">
+          10&deg;
+        </p>
+        <p class="temperature-unit col-1">
+          <a href="#" id="convert-celsius">C</a>
+          |
+          <a href="#" id="convert-fahrenheit">F</a>
+        </p>
+        <div class="conditions">
+          <p id="weather-status" class="line-height">sunny</p>
+          <p id="wind-status" class="line-height">wind: 5.3 m/s</p>
+          <p id="humidity-status">humidity: 57%</p>
+        </div>
+
+        <img class="sunny" src="icons/sunny.svg" alt="sunny" />
+      </div>
+      <div class="bottom-section row">
+        <p class="weekday col-2">Wed</p>
+        <p class="weekday col-2">Thu</p>
+        <p class="weekday col-2">Fri</p>
+        <p class="weekday col-2">Sat</p>
+        <p class="weekday col-2">Sun</p>
+
+        <div class="icon-section">
+          <img class="icon" src="icons/sunny.svg" alt="sunny" />
+          <img class="icon" src="icons/cloudy.svg" alt="cloudy" />
+          <img class="icon" src="icons/cloudy.svg" alt="cloudy" />
+          <img class="icon" src="icons/partly-cloudy.svg" alt="partly-cloudy" />
+          <img class="icon" src="icons/partly-cloudy.svg" alt="partly-cloudy" />
+        </div>
+
+        <div class="row">
+          <p class="highest-lowest col-2">19&deg; | 10&deg;</p>
+          <p class="highest-lowest col-2">22&deg; | 11&deg;</p>
+          <p class="highest-lowest col-2">23&deg; | 14&deg;</p>
+          <p class="highest-lowest col-2">24&deg; | 14&deg;</p>
+          <p class="highest-lowest col-2">23&deg; | 14&deg;</p>
+        </div>
+      </div>
+    </div>
+    <script src="project/script.js"></script>
+  </body>
 </html>
