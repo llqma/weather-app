@@ -111,11 +111,15 @@ body {
 }
 
 .icon {
-  width: 65px;
+  width: 90px;
   height: 65px;
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.6;
 }
 
-.icon-section {
+/*.icon-section {
   display: flex;
   flex: 0.86;
   justify-content: space-around;
@@ -123,7 +127,7 @@ body {
   right: 45px;
   margin-top: -20px;
   opacity: 0.6;
-}
+}*/
 
 .weekday {
   font-family: "Caveat";

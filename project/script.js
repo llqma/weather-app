@@ -31,6 +31,34 @@ if (currentHour > 12) {
   displayTime.innerHTML = `${currentDay} ${currentTime}`;
 }
 
+// Display 5-day forecast
+function displayForecast() {
+  let forecastScreen = document.querySelector('#forecast-section');
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu"];
+  days.forEach(function(day) {
+  forecastHTML = 
+  forecastHTML +
+  `
+  <div class="col-2">
+    <span class="weekday">${day}</div>
+
+    <div class="icon-section row">
+      <img class="icon col-2" src="icons/sunny.svg" alt="sunny" />
+    </div>
+
+    <div class="row">
+      <p class="highest-lowest col-2">19&deg; | 10&deg;</p>
+    </div>
+  </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;  
+  forecastScreen.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+} 
+
 // Display weather
 function showWeather(response) {
   let currentCity = document.querySelector("#current-city");
@@ -49,6 +77,7 @@ function showWeather(response) {
   console.log(windStatus);
   let humidityStatus = document.querySelector("#humidity-status");
   humidityStatus.innerHTML = `humidity: ${response.data.main.humidity}%`;
+
 }
 // Search for a city
 function searchCity(event) {
@@ -110,3 +139,5 @@ celsiusLink.addEventListener("click", toCelsius);
 
 let fahrenheitLink = document.querySelector("#convert-fahrenheit");
 fahrenheitLink.addEventListener("click", toFahrenheit);
+
+displayForecast();
