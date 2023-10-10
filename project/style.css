@@ -85,9 +85,9 @@ body {
 
 .temperature-unit {
   font-size: 16px;
-  margin-top: -15px;
-  margin-left: 35px;
-  width: 70px;
+  margin-top: -12px;
+  margin-left: -25px;
+  width: 75px;
 }
 
 .conditions {

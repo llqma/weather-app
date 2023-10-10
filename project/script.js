@@ -37,7 +37,7 @@ function showWeather(response) {
   currentCity.innerHTML = response.data.name;
   console.log(response.data.name);
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}°`;
+  currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
   let weatherStatus = document.querySelector("#weather-status");
   weatherStatus.innerHTML = response.data.weather[0].description;
   console.log(weatherStatus);
@@ -96,7 +96,7 @@ function toFahrenheit(event) {
 
 function toCelsius(event) {
   event.preventDefault();
-  currentTemperature.innerHTML = "17°";
+  currentTemperature.innerHTML = "17";
   alert(`celsius`);
 }
 
