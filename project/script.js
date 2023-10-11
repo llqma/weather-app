@@ -35,13 +35,13 @@ if (currentHour > 12) {
 function displayForecast() {
   let forecastScreen = document.querySelector('#forecast-section');
   let forecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thu"];
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
   days.forEach(function(day) {
   forecastHTML = 
   forecastHTML +
   `
   <div class="col-2">
-    <span class="weekday">${day}</div>
+    <span class="weekday">${day}</span>
 
     <div class="icon-section row">
       <img class="icon col-2" src="icons/sunny.svg" alt="sunny" />

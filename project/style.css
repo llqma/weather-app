@@ -136,6 +136,9 @@ body {
 
 .highest-lowest {
   font-family: "Klee One";
+  width: 100px;
+  position: relative;
+  right: 10px;
 }
 
 .current-time {
