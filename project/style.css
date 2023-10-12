@@ -101,8 +101,8 @@ body {
   margin-top: -15px;
 }
 
-.sunny {
-  width: 100px;
+.current-icon {
+  width: 120px;
   height: 100px;
   position: absolute;
   left: 145px;

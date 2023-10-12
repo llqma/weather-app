@@ -56,15 +56,12 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;  
   forecastScreen.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 } 
 
 // Display weather
 function showWeather(response) {
   let currentCity = document.querySelector("#current-city");
-
   celsiusTemperature = response.data.main.temp;
-
   currentCity.innerHTML = response.data.name;
   console.log(response.data.name);
   let currentTemperature = document.querySelector("#current-temperature");
@@ -77,6 +74,9 @@ function showWeather(response) {
   console.log(windStatus);
   let humidityStatus = document.querySelector("#humidity-status");
   humidityStatus.innerHTML = `humidity: ${response.data.main.humidity}%`;
+  let currentIcon = document.querySelector("#current-icon");
+  currentIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  currentIcon.setAttribute("alt", response.data.weather[0].description);
 
 }
 // Search for a city
