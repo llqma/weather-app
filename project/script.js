@@ -38,11 +38,56 @@ function formatDay(timestamp) {
   return weekdays[weekday];
 } 
 
+// Display custom icons 
+let currentIcon = document.querySelector("#current-icon");
+function displayIcon(response) {
+    if (response.data.weather[0].icon === "01d") {
+      currentIcon.src = "icons/sunny.svg";
+    } else if (response.data.weather[0].icon === "01n") {
+      currentIcon.src = "icons/night-clear.svg";
+    } else if (response.data.weather[0].icon === "02d") {
+      currentIcon.src = "icons/partly-cloudy.svg";
+    } else if (response.data.weather[0].icon === "02n") {
+      currentIcon.src = "icons/n-partly-cloudy.svg";
+    } else if (
+      response.data.weather[0].icon === "03d" ||
+      response.data.weather[0].icon === "03n" ||
+      response.data.weather[0].icon === "04d" ||
+      response.data.weather[0].icon === "04n"
+    ) {
+      currentIcon.src = "icons/cloudy.svg";
+    } else if (
+      response.data.weather[0].icon === "09d" ||
+      response.data.weather[0].icon === "09n"
+    ) {
+      currentIcon.src = "icons/shower-rain.svg";
+    } else if (response.data.weather[0].icon === "10d") {
+      currentIcon.src = "icons/sun-rain.svg";
+    } else if (response.data.weather[0].icon === "10n") {
+      currentIcon.src = "icons/night-rain.svg";
+    } else if (
+      response.data.weather[0].icon === "11d" ||
+      response.data.weather[0].icon === "11n"
+    ) { 
+      currentIcon.src = "icons/lightening-thunder.svg";
+    } else if (
+      response.data.weather[0].icon === "13d" ||
+      response.data.weather[0].icon === "13n"
+    ) {
+      currentIcon = "icons/snow.svg";
+    } else if (
+      response.data.weather[0].icon === "50d" ||
+      response.data.weather[0].icon === "50n"
+    ) {
+      currentIcon = "icons/fog-mist.svg";
+    }
+
+} 
 
 // Display 5-day forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
+  console.log(response.data);
   let forecastScreen = document.querySelector('#forecast-section');
 
   let forecastHTML = `<div class="row">`;
@@ -74,6 +119,8 @@ function displayForecast(response) {
 
 // Display weather
 function showWeather(response) {
+
+  console.log(response.data)
   let currentCity = document.querySelector("#current-city");
   celsiusTemperature = response.data.main.temp;
   currentCity.innerHTML = response.data.name;
@@ -88,8 +135,7 @@ function showWeather(response) {
   console.log(windStatus);
   let humidityStatus = document.querySelector("#humidity-status");
   humidityStatus.innerHTML = `humidity: ${response.data.main.humidity}%`;
-  let currentIcon = document.querySelector("#current-icon");
-  currentIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  //currentIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   currentIcon.setAttribute("alt", response.data.weather[0].description);
 
   latitude = response.data.coord.lat;
@@ -99,8 +145,9 @@ function showWeather(response) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayForecast);
-
+  displayIcon(response);
 }
+
 // Search for a city
 function searchCity(event) {
   event.preventDefault();
