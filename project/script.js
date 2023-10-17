@@ -90,7 +90,7 @@ function displayForecast(response) {
     <span class="weekday">${formatDay(forecastDay.dt)}</span>
 
     <div class="icon-section row">
-      <img class="icon col-2" src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+      <img class="icon col-2" src="${displayIcon(forecastDay.weather[0].icon)}" 
       alt="sunny" />
     </div>
 
@@ -125,7 +125,7 @@ function showWeather(response) {
   console.log(windStatus);
   let humidityStatus = document.querySelector("#humidity-status");
   humidityStatus.innerHTML = `humidity: ${response.data.main.humidity}%`;
-  //currentIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  currentIcon.setAttribute("src", displayIcon(response.data.weather[0].icon));
   currentIcon.setAttribute("alt", response.data.weather[0].description);
 
   latitude = response.data.coord.lat;
