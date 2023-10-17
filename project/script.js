@@ -39,7 +39,6 @@ function formatDay(timestamp) {
 } 
 
 // Display custom icons 
-let currentIcon = document.querySelector("#current-icon");
 function displayIcon(icon) {
   let currentIcon = "";
   if (icon === "01d") {
@@ -125,6 +124,7 @@ function showWeather(response) {
   console.log(windStatus);
   let humidityStatus = document.querySelector("#humidity-status");
   humidityStatus.innerHTML = `humidity: ${response.data.main.humidity}%`;
+  let currentIcon = document.querySelector("#current-icon");
   currentIcon.setAttribute("src", displayIcon(response.data.weather[0].icon));
   currentIcon.setAttribute("alt", response.data.weather[0].description);
 
