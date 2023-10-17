@@ -40,49 +40,39 @@ function formatDay(timestamp) {
 
 // Display custom icons 
 let currentIcon = document.querySelector("#current-icon");
-function displayIcon(response) {
-    if (response.data.weather[0].icon === "01d") {
-      currentIcon.src = "icons/sunny.svg";
-    } else if (response.data.weather[0].icon === "01n") {
-      currentIcon.src = "icons/night-clear.svg";
-    } else if (response.data.weather[0].icon === "02d") {
-      currentIcon.src = "icons/partly-cloudy.svg";
-    } else if (response.data.weather[0].icon === "02n") {
-      currentIcon.src = "icons/n-partly-cloudy.svg";
-    } else if (
-      response.data.weather[0].icon === "03d" ||
-      response.data.weather[0].icon === "03n" ||
-      response.data.weather[0].icon === "04d" ||
-      response.data.weather[0].icon === "04n"
-    ) {
-      currentIcon.src = "icons/cloudy.svg";
-    } else if (
-      response.data.weather[0].icon === "09d" ||
-      response.data.weather[0].icon === "09n"
-    ) {
-      currentIcon.src = "icons/shower-rain.svg";
-    } else if (response.data.weather[0].icon === "10d") {
-      currentIcon.src = "icons/sun-rain.svg";
-    } else if (response.data.weather[0].icon === "10n") {
-      currentIcon.src = "icons/night-rain.svg";
-    } else if (
-      response.data.weather[0].icon === "11d" ||
-      response.data.weather[0].icon === "11n"
-    ) { 
-      currentIcon.src = "icons/lightening-thunder.svg";
-    } else if (
-      response.data.weather[0].icon === "13d" ||
-      response.data.weather[0].icon === "13n"
-    ) {
-      currentIcon = "icons/snow.svg";
-    } else if (
-      response.data.weather[0].icon === "50d" ||
-      response.data.weather[0].icon === "50n"
-    ) {
-      currentIcon = "icons/fog-mist.svg";
-    }
+function displayIcon(icon) {
+  let currentIcon = "";
+  if (icon === "01d") {
+    currentIcon = "icons/sunny.svg";
+  } else if (icon === "01n") {
+    currentIcon = "icons/night-clear.svg";
+  } else if (icon === "02d") {
+    currentIcon = "icons/partly-cloudy.svg";
+  } else if (icon === "02n") {
+    currentIcon = "icons/n-partly-cloudy.svg";
+  } else if (
+    icon === "03d" ||
+    icon === "03n" ||
+    icon === "04d" ||
+    icon === "04n"
+  ) {
+    currentIcon = "icons/cloudy.svg";
+  } else if (icon === "09d" || icon === "09n") {
+    currentIcon = "icons/shower-rain.svg";
+  } else if (icon === "10d") {
+    currentIcon = "icons/sun-rain.svg";
+  } else if (icon === "10n") {
+    currentIcon = "icons/night-rain.svg";
+  } else if (icon === "11d" || icon === "11n") {
+    currentIcon = "icons/lightening-thunder.svg";
+  } else if (icon === "13d" || icon === "13n") {
+    currentIcon = "icons/snow.svg";
+  } else if (icon === "50d" || icon === "50n") {
+    currentIcon = "icons/fog-mist.svg";
+  }
 
-} 
+  return currentIcon;
+}
 
 // Display 5-day forecast
 function displayForecast(response) {
