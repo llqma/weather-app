@@ -73,6 +73,17 @@ body {
   color: #fe4b53;
 }
 
+.fa-location-dot:hover {
+  cursor: pointer;
+  color: #f0abaf;
+}
+
+.fa-location-dot:active {
+  cursor: pointer;
+  color: #fe4b53;
+}
+
+
 .city {
   font-size: 30px;
   margin: 0;
