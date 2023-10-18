@@ -184,12 +184,16 @@ currentLocation.addEventListener("click", getPosition);
 function toFahrenheit(event) {
   event.preventDefault();
   let currentTemperature = document.querySelector("#current-temperature");
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
   let fahrenheitTemperature = Math.round(celsiusTemperature * 1.8) + 32;
   currentTemperature.innerHTML = `${fahrenheitTemperature}`;
 }
 
 function toCelsius(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
