@@ -114,42 +114,42 @@ body {
   width: 90px;
   height: 65px;
   position: relative;
-  bottom: 10px;
+  bottom: 5px;
   right: 10px;
   opacity: 0.6;
 }
 
-/*.icon-section {
-  display: flex;
-  flex: 0.86;
-  justify-content: space-around;
-  position: relative;
-  right: 45px;
-  margin-top: -20px;
-  opacity: 0.6;
-}*/
-
 .weekday {
   font-family: "Caveat";
   font-size: 26px;
+  position: relative;
+  left: 5px;
 }
 
 .highest-lowest {
   font-family: "Klee One";
   width: 100px;
-  position: relative;
-  right: 10px;
 }
 
 .current-time {
   font-family: "Klee One";
   font-size: 20px;
   text-align: center;
+  position: relative;
+  bottom: 15px;
+  margin-bottom: -100px;
 }
 
 .source-code {
+  text-align: center;
   position: relative;
-  left: 140px;
+  display: block;
+  margin: 0 auto;
   bottom: 150px;
-  color:rgba(53, 53, 53, 0.89)
+  color:rgba(53, 53, 53, 0.89);
+}
+
+.source-code:hover {
+  transition: all ease-in-out 0.1s;
+  font-size: 17px;
 }
