@@ -108,8 +108,6 @@ function displayForecast(response) {
 
 // Display weather
 function showWeather(response) {
-
-  console.log(response.data)
   let currentCity = document.querySelector("#current-city");
   celsiusTemperature = response.data.main.temp;
   currentCity.innerHTML = response.data.name;
@@ -136,6 +134,11 @@ function showWeather(response) {
 
   axios.get(apiUrl).then(displayForecast);
   displayIcon(response);
+
+  if(fahrenheitLink.classList.contains("active")) {
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
+  } 
 }
 
 // Search for a city
